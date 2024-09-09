@@ -1,0 +1,45 @@
+{
+  "Routes": [
+    {
+      //https://locathost:7121/api/values
+
+      "DownstreamPathTemplate": "/api/Service/",
+      "DownstreamSchema": "https",
+      "DownstreamHttpMethod": "GET",
+      "RouteIsCaseSensitive": false,
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7242"
+        },
+        {
+          "Host": "localhost",
+          "Port": "7257"
+        }
+      ],
+      "UpstreamPathTemplate": "/Service",
+      "UpstreamHttpMethod": [ "Get" ],
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+        //"Type": "LeastConnection"
+      },
+
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "GatewayAuthenticationKey",
+      //  "AllowedScopes": []
+      //},
+
+      "RateLimitOptions": {
+        "ClientWhitelist": [ "MyClient" ],
+        "EnableRateLimiting": true,
+        "Period": "15s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7121"
+  }
+}
