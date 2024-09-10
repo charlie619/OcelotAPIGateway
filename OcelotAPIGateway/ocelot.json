@@ -24,10 +24,10 @@
         //"Type": "LeastConnection"
       },
 
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "GatewayAuthenticationKey",
-      //  "AllowedScopes": []
-      //},
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "GatewayAuthenticationKey",
+        "AllowedScopes": []
+      },
 
       "RateLimitOptions": {
         "ClientWhitelist": [ "MyClient" ],
